@@ -1,0 +1,24 @@
+<h1>Play with your Tamagotchi!</h1>
+@if (@Model.GetState() == true)
+{
+  <h2>@Model.GetName()<span>'s</span> alive!</h2>
+  <p>@Model.GetFood()</p>
+  <p>@Model.GetPlay()</p>
+  <p>@Model.GetSleep()</p>
+}
+else
+{
+  <h2>@Model.GetName() :(</h2>
+}
+<form action="/pet/feed" method="post">
+  <button type="submit" id="feed-pet" name="feed-pet">Feed Pet</button>
+</form>
+<form action="/pet/play" method="post">
+  <button type="submit" id="play-pet" name="play-pet">Play With Pet</button>
+</form>
+<form action="/pet/sleep" method="post">
+  <button type="submit" id="sleep-pet" name="sleep-pet">Give Pet Sleep</button>
+</form>
+<form action="/pet/time" method="post">
+  <button type="submit" id="time-passed" name="time-passed">Time Passed</button>
+</form>
